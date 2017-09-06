@@ -2,10 +2,16 @@
 using namespace std;
 #include <cstring>
 int main(){
-	const char *str = "hello1";
+
+	string s="hello000sadfsdfsdf";
 	
-	cout << strlen(str) <<endl; 
-	cout << sizeof(str) <<endl;
+	cout << s.capacity() <<endl;
+	s.clear();
 	
+	cout << s.capacity() <<endl;
+	cout << s.size() <<endl;	
+	s = "hello";
+	cout << s.capacity() <<endl;
+	cout << s.size() <<endl;
 	return 0;
 }
