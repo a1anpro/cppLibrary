@@ -1,13 +1,19 @@
 #include <iostream>
 #include "MyString.h"
+#include <cassert>
 using namespace std;
 
 int main() {
-	MyString ms("hello");
+	MyString ms("This is a string");
 
-	ms.insert(2, 4, 'x');
-	cout << ms << endl;
-	cout << ms.size() << endl;
-	cout << ms.capacity() << endl;
+	auto n = ms.find("is");
+
+	if (n == MyString::npos) {
+		cout << "not found" << endl;
+	}
+	else {
+		cout << ms.substr(n) << endl;
+	}
+
 	return 0;
 }

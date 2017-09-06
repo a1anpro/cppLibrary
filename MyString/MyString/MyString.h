@@ -13,12 +13,13 @@ using namespace std;
 class MyString {
 public:
 	typedef size_t size_type;
-
+	static const size_t npos = -1;
 	friend ostream& operator<<(ostream &os, const MyString &);
 	
 	MyString();
 	MyString(size_type sz, char chr);
 	MyString(const char*);
+	MyString(const char *, const char *);
 	//copy control functions:
 	MyString(const MyString&);
 	MyString& operator=(const MyString&);
@@ -61,6 +62,31 @@ public:
 	//operations function:
 	void clear();
 	MyString& insert(size_type index, size_type count, char ch);
+	MyString& insert(size_type index, const char *str, size_type count = 1);
+
+	MyString& erase(size_type index = 0, size_type len = npos);
+	MyString& erase(char *position);
+	MyString& erase(char *b, char *e);
+
+	void push_back(char ch);
+	void pop_back();
+
+	MyString& append(size_type count, char ch);
+	MyString& append(const MyString &rhs);
+
+	MyString& operator+= (const MyString &rhs);
+	MyString& operator+= (char ch);
+	MyString& operator+= (const char *str);
+
+	int compare(const MyString &rhs) const;
+
+	MyString substr(size_type pos = 0, size_type count = npos) const;
+	size_type copy(char *dest, size_type count, size_type pos = 0)const;
+	void resize(size_type count, char ch = ' ');
+	void swap(MyString &rhs);
+
+	//search
+	size_type find(const MyString &str, size_type pos = 0) const;
 
 	//elements access
 	char& at(size_type pos);

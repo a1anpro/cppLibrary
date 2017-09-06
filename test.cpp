@@ -1,17 +1,10 @@
 #include <iostream>
 using namespace std;
 #include <cstring>
-int main(){
+#include <algorithm>
 
-	string s="hello000sadfsdfsdf";
-	
-	cout << s.capacity() <<endl;
-	s.clear();
-	
-	cout << s.capacity() <<endl;
-	cout << s.size() <<endl;	
-	s = "hello";
-	cout << s.capacity() <<endl;
-	cout << s.size() <<endl;
+int main(){
+	string str="hello";
+	string str1(str.begin(), str.end());
 	return 0;
 }
