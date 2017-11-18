@@ -1,8 +1,8 @@
 /*
-Simplify Version1.0
-Subject: String
-Author:yanhui
-Start Time:2017/9/5
+	Simplify Version1.0
+	Subject: String
+	Author:yanhui
+	Start Time:2017/9/5
 */
 
 #pragma once
@@ -77,7 +77,7 @@ public:
 	MyString& operator+= (const MyString &rhs);
 	MyString& operator+= (char ch);
 	MyString& operator+= (const char *str);
-
+	
 	int compare(const MyString &rhs) const;
 
 	MyString substr(size_type pos = 0, size_type count = npos) const;
@@ -120,9 +120,9 @@ private:
 	//static tool:an allocator to allocate flexiblely
 	static allocator<char> alloc;
 
-	char *data_;
-	char *end_;
-	char *cap_;//store the total memory it has
+	char *data_;//start position of the string
+	char *end_;//end postition of the string
+	char *cap_;//store the total memory it has, behind the *end_
 };
 
 //declaration outside

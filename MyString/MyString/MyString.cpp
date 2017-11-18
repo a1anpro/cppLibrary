@@ -135,14 +135,16 @@ const char & MyString::at(size_type pos) const
 
 char & MyString::operator[](size_type pos)
 {
-	if (pos >= size() || pos < 0) {
+	return const_cast<char&>(static_cast<const MyString&>(*this)[pos]);
+	/*if (pos >= size() || pos < 0) {
 		throw out_of_range("operator[] wrong position");
 	}
-	return *(data_ + pos);
+	return *(data_ + pos);*/
 }
 
 const char & MyString::operator[](size_type pos) const
 {
+	//cout << "const×ª³ý µ÷ÓÃ²âÊÔ" << endl;
 	if (pos >= size() || pos < 0) {
 		throw out_of_range("operator[] wrong position");
 	}
